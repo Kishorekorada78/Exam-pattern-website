@@ -103,17 +103,10 @@ FOR i = 0 TO n-2
 What is the array after first iteration?
 Which sorting algorithm is this?`,
 
-        `6) Processes arrive at time 0:
-P1 = 6
-P2 = 2
-P3 = 8
-P4 = 3
 
-What is the execution order in Shortest Job First?`,
+        `6) What structure does the OS use to detect deadlocks?`,
 
-        `7) What structure does the OS use to detect deadlocks?`,
-
-        `8) FUNCTION fa(n)
+        `7) FUNCTION fa(n)
 
 IF n <= 1
     RETURN n
@@ -122,7 +115,7 @@ RETURN fa(n-1) + fa(n-2)
 
 PRINT fa(5)`,
 
-        `9) FUNCTION f(n)
+        `8) FUNCTION f(n)
 
 IF n == 0
     RETURN 0
@@ -131,40 +124,17 @@ RETURN n + f(n-1) + f(n-1)
 
 PRINT f(3)`,
 
-        `10) Array size = 16
+        `9) Array size = 16
 
 Maximum number of comparisons needed in binary search?`,
 
-        `11) x = 5
-y = 10
-
-IF x != y
-    x = x ^ y
-    y = x ^ y
-    x = x ^ y
-
-PRINT x,y`,
-
-        `12) int i = 1;
+        `10) int i = 1;
 
 while(i < 10)
 {
     printf("%d ", i);
     i = i * 2;
-}`,
-
-        `13) int i, sum = 0;
-
-for(i = 1; i <= 10; i++)
-{
-    if(i == 5)
-        break;
-
-    sum += i;
-}
-
-printf("%d", sum);`
-
+}`
     ];
     // Render questions
     const container = document.getElementById('questionsContainer');
