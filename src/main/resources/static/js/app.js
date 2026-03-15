@@ -49,18 +49,123 @@ if (window.location.pathname.endsWith('exam.html')) {
 
     // Questions Data
     const questions = [
-        "1. Write a function to reverse a string.",
-        "2. Explain recursion with an example calculating factorial.",
-        "3. Write pseudocode to find the largest element in an array.",
-        "4. How do you check if a number is prime?",
-        "5. Write an algorithm to perform a binary search.",
-        "6. Given a linked list, how do you find the middle element?",
-        "7. Implement a stack using an array.",
-        "8. Write pseudocode for bubble sort.",
-        "9. Find the Fibonacci series up to n terms.",
-        "10. Check if a given string is a palindrome."
-    ];
 
+        `1) arr = [-2,1,-3,4,-1,2,1,-5,4]
+
+max_sum = arr[0]
+current = arr[0]
+
+FOR i = 1 TO length(arr)-1
+    current = MAX(arr[i], current + arr[i])
+    max_sum = MAX(max_sum, current)
+END FOR
+
+PRINT max_sum`,
+
+        `2) FUNCTION f(n)
+IF n == 0
+    RETURN 0
+RETURN n + f(n-1)
+END
+
+PRINT f(5)`,
+
+        `3) arr = [3,1,3,4,2]
+
+slow = arr[0]
+fast = arr[0]
+
+DO
+    slow = arr[slow]
+    fast = arr[arr[fast]]
+WHILE slow != fast
+
+PRINT slow`,
+
+        `4) if (printf("Hello") && false) {
+
+} else {
+    printf("World");
+}
+What is the output?`,
+
+        `5) arr = [7,3,5,3,4]
+
+FOR i = 0 TO n-2
+    min = i
+
+    FOR j = i+1 TO n-1
+        IF arr[j] < arr[min]
+            min = j
+
+    swap(arr[i], arr[min])
+
+What is the array after first iteration?
+Which sorting algorithm is this?`,
+
+        `6) Processes arrive at time 0:
+P1 = 6
+P2 = 2
+P3 = 8
+P4 = 3
+
+What is the execution order in Shortest Job First?`,
+
+        `7) What structure does the OS use to detect deadlocks?`,
+
+        `8) FUNCTION fa(n)
+
+IF n <= 1
+    RETURN n
+
+RETURN fa(n-1) + fa(n-2)
+
+PRINT fa(5)`,
+
+        `9) FUNCTION f(n)
+
+IF n == 0
+    RETURN 0
+
+RETURN n + f(n-1) + f(n-1)
+
+PRINT f(3)`,
+
+        `10) Array size = 16
+
+Maximum number of comparisons needed in binary search?`,
+
+        `11) x = 5
+y = 10
+
+IF x != y
+    x = x ^ y
+    y = x ^ y
+    x = x ^ y
+
+PRINT x,y`,
+
+        `12) int i = 1;
+
+while(i < 10)
+{
+    printf("%d ", i);
+    i = i * 2;
+}`,
+
+        `13) int i, sum = 0;
+
+for(i = 1; i <= 10; i++)
+{
+    if(i == 5)
+        break;
+
+    sum += i;
+}
+
+printf("%d", sum);`
+
+    ];
     // Render questions
     const container = document.getElementById('questionsContainer');
     questions.forEach((q, index) => {
