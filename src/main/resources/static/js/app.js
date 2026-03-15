@@ -173,10 +173,10 @@ printf("%d", sum);`
         const div = document.createElement('div');
         div.className = 'question-card';
         div.innerHTML = `
-            <div class="question-number">Question ${qNum}</div>
-            <div class="question-text">${q}</div>
-            <textarea id="answer_${qNum}" placeholder="Type your answer here..." onpaste="return false;" ondrop="return false;"></textarea>
-        `;
+    <div class="question-number">Question ${qNum}</div>
+    <div class="question-text"><pre>${q}</pre></div>
+    <textarea id="answer_${qNum}" placeholder="Type your answer here..." onpaste="return false;" ondrop="return false;"></textarea>
+`;
         container.appendChild(div);
     });
 
@@ -231,7 +231,7 @@ printf("%d", sum);`
     });
 
     // Timer Logic (60 mins)
-    const EXAM_DURATION_MS = 60 * 60 * 1000;
+    const EXAM_DURATION_MS = 30 * 60 * 1000;
     let startTime = parseInt(sessionStorage.getItem('examStart'));
     const timerDisplay = document.getElementById('timer');
 
@@ -259,7 +259,7 @@ printf("%d", sum);`
     // Submit Logic
     const submitExam = async (isAuto = false) => {
         const answers = [];
-        for (let i = 1; i <= 10; i++) {
+        for (let i = 1; i <= questions.length; i++) {
             const text = document.getElementById(`answer_${i}`).value;
             answers.push({ questionNumber: i, answerText: text });
         }
