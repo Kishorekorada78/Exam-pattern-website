@@ -1,13 +1,14 @@
-const API_URL = '/api';
+const API_URL = 'https://exam-pattern-website-production.up.railway.app/api';
+
 
 async function fetchStudents() {
     const tbody = document.getElementById('studentTableBody');
     tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;">Loading...</td></tr>';
-    
+
     try {
         const response = await fetch(`${API_URL}/admin/students`);
         const students = await response.json();
-        
+
         tbody.innerHTML = '';
         if (students.length === 0) {
             tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;">No students registered yet.</td></tr>';
@@ -16,12 +17,12 @@ async function fetchStudents() {
 
         students.forEach(s => {
             const tr = document.createElement('tr');
-            
+
             const badgeClass = s.examSubmitted ? 'badge-success' : 'badge-danger';
             const statusText = s.examSubmitted ? 'Submitted' : 'In Progress';
-            
-            const switchBadge = s.tabSwitchCount > 2 ? 'badge-danger' : 
-                                s.tabSwitchCount > 0 ? 'badge-danger' : 'badge-success'; // Mark any > 0 as danger or warning
+
+            const switchBadge = s.tabSwitchCount > 2 ? 'badge-danger' :
+                s.tabSwitchCount > 0 ? 'badge-danger' : 'badge-success'; // Mark any > 0 as danger or warning
 
             tr.innerHTML = `
                 <td>${s.id}</td>
@@ -46,24 +47,24 @@ async function fetchStudents() {
 async function viewAnswers(studentId, name) {
     const container = document.getElementById('answersContainer');
     container.innerHTML = '<p>Loading answers...</p>';
-    
+
     document.getElementById('overlay').style.display = 'block';
     document.getElementById('answersModal').style.display = 'block';
-    
+
     try {
         const response = await fetch(`${API_URL}/admin/students/${studentId}/answers`);
         const answers = await response.json();
-        
+
         container.innerHTML = `<h3 style="margin-bottom: 20px;">Candidate: ${name}</h3>`;
-        
+
         if (answers.length === 0) {
             container.innerHTML += '<p>No answers submitted.</p>';
             return;
         }
 
         // Sort by question number
-        answers.sort((a,b) => a.questionNumber - b.questionNumber);
-        
+        answers.sort((a, b) => a.questionNumber - b.questionNumber);
+
         answers.forEach(ans => {
             container.innerHTML += `
                 <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
@@ -72,7 +73,7 @@ async function viewAnswers(studentId, name) {
                 </div>
             `;
         });
-        
+
     } catch (e) {
         container.innerHTML = `<p style="color: var(--danger-color)">Error loading answers.</p>`;
     }

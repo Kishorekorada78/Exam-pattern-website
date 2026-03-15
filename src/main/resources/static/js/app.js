@@ -1,9 +1,10 @@
-const API_URL = '/api';
+const API_URL = 'https://exam-pattern-website-production.up.railway.app/api';
+
 
 // --- LOGIN PAGE LOGIC ---
 if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
     const loginForm = document.getElementById('loginForm');
-    if(loginForm) {
+    if (loginForm) {
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const name = document.getElementById('name').value;
@@ -19,7 +20,7 @@ if (window.location.pathname.endsWith('index.html') || window.location.pathname.
                 });
 
                 const data = await response.json();
-                
+
                 if (response.ok) {
                     sessionStorage.setItem('studentId', data.studentId);
                     sessionStorage.setItem('studentName', name);
@@ -98,7 +99,7 @@ if (window.location.pathname.endsWith('exam.html')) {
     document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
             tabSwitches++;
-            
+
             // Notify backend independently
             fetch(`${API_URL}/tab-switch`, {
                 method: 'POST',
@@ -142,9 +143,9 @@ if (window.location.pathname.endsWith('exam.html')) {
 
         const mins = Math.floor(remaining / 60000);
         const secs = Math.floor((remaining % 60000) / 1000);
-        
+
         timerDisplay.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-        
+
         if (remaining < 300000) { // last 5 mins
             timerDisplay.classList.add('danger');
         }
@@ -183,21 +184,21 @@ if (window.location.pathname.endsWith('exam.html')) {
                     </div>`;
             } else {
                 // Ignore errors if auto submitting
-                if(!isAuto) alert("Error submitting exam. Please check with an admin.");
+                if (!isAuto) alert("Error submitting exam. Please check with an admin.");
             }
         } catch (e) {
-            if(!isAuto) alert("Network error. Could not submit.");
+            if (!isAuto) alert("Network error. Could not submit.");
         }
     };
 
     document.getElementById('finalSubmitBtn').addEventListener('click', () => {
-        if(confirm("Are you sure you want to submit? You cannot undo this.")) {
+        if (confirm("Are you sure you want to submit? You cannot undo this.")) {
             submitExam(false);
         }
     });
-    
+
     document.getElementById('submitExamBtnTop').addEventListener('click', () => {
-        if(confirm("Are you sure you want to submit? You cannot undo this.")) {
+        if (confirm("Are you sure you want to submit? You cannot undo this.")) {
             submitExam(false);
         }
     });
