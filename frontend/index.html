@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Platform - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="center-content">
+    <div class="glass-container login-box">
+        <div class="header">
+            <h1>Welcome to the Contest</h1>
+            <p>Please enter your details to begin the exam.</p>
+        </div>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="input-group">
+                <label for="rollNumber">Roll Number</label>
+                <input type="text" id="rollNumber" required placeholder="CS2024-001">
+            </div>
+            
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="john@example.com">
+            </div>
+            
+            <div id="loginError" class="error-message"></div>
+            
+            <button type="submit" class="btn primary-btn pulse-on-hover">Start Exam</button>
+        </form>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
