@@ -135,37 +135,40 @@ while(i < 10)
     printf("%d ", i);
     i = i * 2;
 }` ,
-        ` 11) You are given an array arr[] of non-negative integers. 
-You have to move all the zeros in the array to the right end 
-while maintaining the relative order of the non-zero elements.
- The operation must be performed in place, meaning you should not use extra space for another array.
+        ` 11)Binary Search 
+        You are given an array arr[] of non-negative integers. 
+        You have to move all the zeros in the array to the right end 
+        while maintaining the relative order of the non-zero elements.
+        The operation must be performed in place, meaning you should 
+        not use extra space for another array.
 
-Examples:
+        Examples:
 
-Input: arr[] = [1, 2, 0, 4, 3, 0, 5, 0]
-Output: [1, 2, 4, 3, 5, 0, 0, 0]
-Explanation: There are three 0s that are moved to the end.
-Input: arr[] = [10, 20, 30]
-Output: [10, 20, 30]
-Explanation: No change in array as there are no 0s.`,
+        Input: arr[] = [1, 2, 0, 4, 3, 0, 5, 0]
+        Output: [1, 2, 4, 3, 5, 0, 0, 0]
+        Explanation: There are three 0s that are moved to the end.
+        Input: arr[] = [10, 20, 30]
+        Output: [10, 20, 30]
+        Explanation: No change in array as there are no 0s.`,
 
-        ` 12) Given a sorted array arr[] and an integer k, find the position(0-based indexing) 
- at which k is present in the array using binary search.
- If k doesn't exist in arr[] return -1. 
+        ` 12) Move all zeros to the end of the array.
+           Given a sorted array arr[] and an integer k, find the position(0-based indexing) 
+           at which k is present in the array using binary search.
+           If k doesn't exist in arr[] return -1. 
 
-Note: If multiple occurrences are there, please return the smallest index.
+           Note: If multiple occurrences are there, please return the smallest index.
 
-Examples:
+           Examples:
 
-Input: arr[] = [1, 2, 3, 4, 5], k = 4
-Output: 3
-Explanation: 4 appears at index 3.
-Input: arr[] = [11, 22, 33, 44, 55], k = 445
-Output: -1
-Explanation: 445 is not present.
-Input: arr[] = [1, 1, 1, 1, 2], k = 1
-Output: 0
-Explanation: 1 appears at index 0.`
+           Input: arr[] = [1, 2, 3, 4, 5], k = 4
+           Output: 3
+           Explanation: 4 appears at index 3.
+           Input: arr[] = [11, 22, 33, 44, 55], k = 445
+           Output: -1
+           Explanation: 445 is not present.
+           Input: arr[] = [1, 1, 1, 1, 2], k = 1
+           Output: 0
+           Explanation: 1 appears at index 0.`
     ];
     // Render questions
     const container = document.getElementById('questionsContainer');
