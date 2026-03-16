@@ -135,7 +135,7 @@ while(i < 10)
     printf("%d ", i);
     i = i * 2;
 }` ,
-        ` 11)Binary Search 
+        ` 11) Move all zeros to the end of the array. 
         You are given an array arr[] of non-negative integers. 
         You have to move all the zeros in the array to the right end 
         while maintaining the relative order of the non-zero elements.
@@ -151,7 +151,7 @@ while(i < 10)
         Output: [10, 20, 30]
         Explanation: No change in array as there are no 0s.`,
 
-        ` 12) Move all zeros to the end of the array.
+        ` 12) Binary Search
            Given a sorted array arr[] and an integer k, find the position(0-based indexing) 
            at which k is present in the array using binary search.
            If k doesn't exist in arr[] return -1. 
